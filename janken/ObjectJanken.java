@@ -1,15 +1,20 @@
 package janken;
 
 /**
- * オブジェクト指向によるジャンケンプログラム。
+ * 戦略インタフェースに対応したオブジェクト指向によるジャンケンプログラム。
  * @author shirai
  */
 public class ObjectJanken {
 	public static void main(String[] args) {
 		Judge saito = new Judge();
 		
-		Player murata = new Murata("村田さん");
-		Player yamada = new Yamada("山田さん");
+		Player murata = new Player("村田さん");
+		Tactics murataTactics = new RandomTactics();
+		murata.setTactics(murataTactics);
+		
+		Player yamada = new Player("山田さん");
+		Tactics yamadaTactics = new RandomTactics();
+		yamada.setTactics(yamadaTactics);
 		
 		saito.startJanken(murata, yamada);
 	}

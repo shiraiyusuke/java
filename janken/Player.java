@@ -20,6 +20,9 @@ public class Player {
 	/** プレイヤーの勝った回数 */
 	private int winCount_ = 0;
 	
+	/** 与えられる戦略 */
+	private Tactics tactics_;
+	
 	/**
 	 * プレイヤークラスのコンストラクタ
 	 * @param name 名前
@@ -35,6 +38,12 @@ public class Player {
 	 * ジャンケンの手を出す。
 	 * @return ジャンケンの手
 	 */
+	int showHand(){
+		int hand = tactics_.readTactics();
+		return hand;
+	}
+	
+	/* interfaceの利用前の関数
 	public int showHand(){
 		double random = 0.0;
 		int hand = 0;
@@ -49,6 +58,7 @@ public class Player {
 		}
 		return hand;
 	}
+	/*
 	
 	/**
 	 *  審判から勝敗を聞く。
@@ -74,5 +84,13 @@ public class Player {
 	 */
 	public String getName(){
 		return name_;
+	}
+	
+	/**
+	 * プレイヤーに戦略を渡す。
+	 * @param tactics 戦略
+	 */
+	void setTactics(Tactics tactics){
+		this.tactics_ = tactics;
 	}
 }
