@@ -7,9 +7,9 @@ package janken;
  */
 public class Player {
 	//定数
-	public static final int STONE = 1;    //グー
-	public static final int SCISSORS = 2; //チョキ
-	public static final int PAPER = 3;    //パー
+	public static final int STONE = 0;    //グー
+	public static final int SCISSORS = 1; //チョキ
+	public static final int PAPER = 2;    //パー
 
 	//--------------------
 	//プレイヤークラスの属性
