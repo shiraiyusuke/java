@@ -30,13 +30,14 @@ public class Hand {
 		
 		int pos;
 		
-		for(int count = 0; count < number *2 ; count++){
+		for(int count = 0; count < number * 2 ; count++){
 			//ランダムな位置からカードを1枚抜く。
-			pos = (int) (Math.random() * number);
-			Card pickedCard = (Card) hand_.remove(pos);
+            pos = (int) (Math.random() * number);
+            Card pickedCard = (Card) hand_.remove(pos);
+
+            //抜いたカードを最後に加える。
+    		hand_.add(pickedCard);
 		}
-		//抜いたカードを最後に加える。
-		hand_.add(pickCard());
 	}
 	
 	/**
